@@ -30,4 +30,7 @@ steps:
     script: 'npm install -g appcenter-cli'
 - task: CmdLine@2
   inputs:
+    script: 'appcenter login --token $(userToken)'
+- task: CmdLine@2
+  inputs:
     script: 'sh upload.sh'
