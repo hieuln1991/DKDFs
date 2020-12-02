@@ -19,9 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 - task: NodeTool@0
   inputs:
-    versionSpec: '6.x'
+    versionSpec: '12.x'
     checkLatest: true
-    force32bit: true
 - task: Npm@1
   inputs:
     command: 'install'
@@ -30,4 +29,7 @@ steps:
     script: 'npm install -g appcenter-cli'
 - task: CmdLine@2
   inputs:
-    script: 'sh upload.sh'
+    script: 'appcenter login --token $(userTK)'
+- task: CmdLine@2
+  inputs:
+    script: 'bash upload.sh'
