@@ -32,4 +32,4 @@ steps:
     script: 'appcenter login --token $(userTK)'
 - task: CmdLine@2
   inputs:
-    script: 'sh upload.sh'
+    script: 'bash upload.sh'
